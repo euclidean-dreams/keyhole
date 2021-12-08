@@ -14,7 +14,11 @@ void initializeLeds() {
 void renderLoop(void *parameter) {
     while (true) {
         ulTaskNotifyTake(true, portMAX_DELAY);
-        std::memcpy(&leds, getReceiveBuffer(), LED_COUNT * 3);
+        auto header = getReceiveBuffer();
+        auto brightness = *header;
+        auto ledData = header + SPI_HEADER_SIZE;
+        std::memcpy(&leds, ledData, LED_COUNT * 3);
+        FastLED.setBrightness(brightness);
         FastLED.show();
     }
 }
