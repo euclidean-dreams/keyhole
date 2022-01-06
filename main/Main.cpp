@@ -4,10 +4,10 @@
 
 void entrypoint() {
     using namespace keyhole;
-    initializeSpi();
+//    initializeSpi();
     initializeLeds();
 
-    xTaskCreate(&listenLoop, "listenLoop", 2048, nullptr, 5, getListenLoopHandle());
+//    xTaskCreate(&listenLoop, "listenLoop", 2048, nullptr, 5, getListenLoopHandle());
     xTaskCreate(&renderLoop, "renderLoop", 2048, nullptr, 5, getRenderLoopHandle());
 }
 

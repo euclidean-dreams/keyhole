@@ -1,9 +1,9 @@
 #ifndef KEYHOLE_CONSTANTS_H
 #define KEYHOLE_CONSTANTS_H
 
-#define LED_COUNT (74 * 20)
-#define LED_SLICE_SIZE (74 * 4)
-#define LED_MAX_MILIAMPS 30 * 1000
+#define LED_COUNT (60 * 5)
+#define LED_SLICE_SIZE (60 * 1)
+#define LED_MAX_MILIAMPS 1 * 1000
 
 #define SPI_HEADER_SIZE 4
 #define SPI_MOSI_PIN 23
